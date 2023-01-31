@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet var startButton: UIButton!
     
     private var currentLight = "red"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -31,6 +32,7 @@ class ViewController: UIViewController {
 
     @IBAction func startButtonDidTapped() {
         startButton.setTitle("NEXT", for: .normal)
+        
         switch currentLight {
         case "red":
             redLight.alpha = 1
