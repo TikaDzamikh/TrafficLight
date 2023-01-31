@@ -19,15 +19,15 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="9PD-7k-dhB">
                                 <rect key="frame" x="144" y="79" width="105" height="381"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXq-5s-7Oy">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FXq-5s-7Oy" userLabel="Red">
                                         <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
                                         <color key="backgroundColor" systemColor="systemRedColor"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q94-58-7xD">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q94-58-7xD" userLabel="Yellow">
                                         <rect key="frame" x="0.0" y="138" width="105" height="105"/>
                                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coe-2u-x4t">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="coe-2u-x4t" userLabel="Green">
                                         <rect key="frame" x="0.0" y="276" width="105" height="105"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                     </view>
@@ -37,17 +37,20 @@
                                     <constraint firstAttribute="height" constant="381" id="mpx-BX-4dX"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KY1-RS-yQh">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KY1-RS-yQh" userLabel="START Button">
                                 <rect key="frame" x="112" y="730" width="169" height="45"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="169" id="Bji-Qn-qPS"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="169" id="Bji-Qn-qPS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Menlo-Regular" family="Menlo" pointSize="28"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="START">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="startButtonDidTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="bTi-1t-fA1"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -59,6 +62,12 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KY1-RS-yQh" secondAttribute="bottom" constant="43" id="miq-oq-pXD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greenLight" destination="coe-2u-x4t" id="K2c-aP-xiW"/>
+                        <outlet property="redLight" destination="FXq-5s-7Oy" id="Wve-2P-moE"/>
+                        <outlet property="startButton" destination="KY1-RS-yQh" id="vqf-n1-rmy"/>
+                        <outlet property="yellowLight" destination="q94-58-7xD" id="2j2-PQ-3RW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
